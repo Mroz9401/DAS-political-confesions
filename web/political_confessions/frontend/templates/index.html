@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Political confessions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Navbar styles */
+        .custom-navbar {
+            background-color: #222;  /* Dark gray background for the navbar */
+        }
+
+        /* Adjusting the link colors for better visibility on the dark background */
+        .custom-navbar .nav-link {
+            color: #aaa;  /* Light gray color for the link text */
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: white;  /* White color for the link text when hovered */
+        }
+
+        /* Updated circle icon styles */
+        .circle-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #444;  /* Slightly lighter gray for the icon background */
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;  /* Icon color */
+            font-size: 18px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Template styles */
+        body {
+            background-color: #111;  /* Very dark gray background for the template/body */
+            color: #ffffff; /* Default text color set to white */
+        }
+
+        .main {
+            color: #ccc;  /* Light gray color for the main content text */
+        }
+
+        .card {
+            background-color: #333; /* Darker card background */
+            border: none;
+        }
+
+        .card-header {
+            border-bottom: 1px solid #444; /* Slightly lighter border for header */
+            color: #ffffff; /* Ensuring header text is white */
+        }
+
+        /* Additional styles */
+        #chat-history {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #444; /* Slightly lighter border for chat history */
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #2a2a2a;
+            color: #ffffff; /* Ensuring header text is white */
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .incoming {
+            background-color: #3a3a3a; /* Slightly lighter background for incoming messages */
+            text-align: left;
+            color: #ffffff; /* Ensuring incoming message text is white */
+        }
+
+        .outgoing {
+            background-color: #007bff; /* Bootstrap's blue */
+            text-align: right;
+            color: white;
+        }
+
+        .input-group {
+            border: 1px solid #444; /* Slightly lighter border for input group */
+            border-radius: 5px; /* Rounded corners for input group */
+        }
+
+        .input-group-text, .form-control, .btn {
+            border-color: #444; /* Slightly lighter border for input and button elements */
+            color: #ffffff; /* Ensuring input and button text is white */
+        }
+
+        .form-control, .btn {
+            background-color: #3a3a3a; /* Slightly lighter background for input and button */
+            color: #f5f5f5; /* Default text color for input and button */
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: #0056b3; /* Darker blue for button hover/focus states */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-3 col-lg-3 d-none d-md-block custom-navbar sidebar">
+            <div class="position-sticky">
+                <ul class="nav flex-column">
+                    {% for politician in object_politicians %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'chat_view' politician.id %}">
+                                <span class="circle-icon">
+                                    <img class="circle-icon" src="{{MEDIA_URL}}{{politician.icon_path.url}}" alt="{{politician.name}}">
+                                </span>
+                                {{politician.name}}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    <!-- Add more links as needed -->
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content goes here -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-md-4">
+            {% block chat %}
+            <!-- This block can be overridden by child templates -->
+            {% endblock %}   
+            <!-- <form method="post">
+                {% csrf_token %}
+                Input: <input type="text" name="input" required><br>
+                <input type="submit" value="Compute">
+            </form>
+
+            {% if output %}
+                <p>Output: {{ output }}</p>
+            {% endif %} -->
+        </main>
+    </div>
+</div>
+    
+
+</body>
+</html>
