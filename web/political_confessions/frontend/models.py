@@ -3,6 +3,7 @@ from django.db import models
 class Llm_model(models.Model):
     name = models.TextField()  # You can use a more sophisticated method to store parameters.
     parameters = models.TextField()  # You can use a more sophisticated method to store parameters.
+    path = models.CharField(max_length=1024, blank=True)
     description = models.TextField()
 
 class Politician(models.Model):

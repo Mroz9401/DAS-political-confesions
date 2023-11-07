@@ -5,9 +5,8 @@
         <div class="card-header">
             Chatting with: <strong> {{object_chat.name}} </strong>
         </div>
-        <div class="card-body">
+        <div class="card-body" data-object-chat="{{ object_chat.id|escapejs }}">
             <div id="chat-history">
-                <!-- Sample chat messages -->
                 <div class="message incoming">
                     Hi, how are you?
                 </div>
@@ -15,14 +14,97 @@
                     I'm good, thanks! How about you?
                 </div>
             </div>
-
+    
             <!-- Message input field -->
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type a message...">
+                <input type="text" id="message-input" class="form-control" placeholder="Type a message...">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">Send</button>
+                    <button class="btn btn-primary" type="button" id="send-button">Send</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+    // This function updates the chat with the user's message and the LLM's response.
+    function updateChatHistory(userMessage, llmResponse) {
+        const chatHistory = document.getElementById('chat-history');
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'message outgoing';
+        userMessageDiv.textContent = userMessage;
+        chatHistory.appendChild(userMessageDiv);
+    
+        if (llmResponse) {
+            const llmResponseDiv = document.createElement('div');
+            llmResponseDiv.className = 'message incoming';
+            llmResponseDiv.textContent = llmResponse;
+            chatHistory.appendChild(llmResponseDiv);
+        }
+    
+        // Scroll to the bottom of the chat history to show the newest message.
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+    
+
+    document.getElementById('send-button').addEventListener('click', function() {
+        const messageInput = document.getElementById('message-input');
+        const userMessage = messageInput.value;
+        const cardBody = document.querySelector('.card-body');
+        
+        // Retrieve the object_chat attribute from the data-object-chat attribute
+        const objectChat = JSON.parse(cardBody.getAttribute('data-object-chat'));
+
+        // Clear the input field ready for the next message.
+        messageInput.value = '';
+
+        if (userMessage.trim()) { // Make sure the message is not empty or just whitespace.
+            // Update chat with user's message immediately.
+            // updateChatHistory(userMessage);
+
+            // Call the LLM function and wait for the response.
+            compute_llm_output(userMessage, objectChat).then(llmResponse => {
+                // Update chat with LLM's response.
+                updateChatHistory(userMessage, llmResponse);
+            }).catch(error => {
+                console.error('Error getting LLM response:', error);
+                // Handle the error case (e.g., display a message to the user).
+            });
+        }
+    });
+
+    function compute_llm_output(message, objectChat) {
+        // This now calls the Django view you set up.
+        return fetch('/get_llm_response/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken') // Assuming you're using CSRF protection
+            },
+            body: JSON.stringify({ message: message, object_chat: objectChat })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => data.llm_output);
+    }
+
+    // Helper function to get the CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    </script>    
 {% endblock %}

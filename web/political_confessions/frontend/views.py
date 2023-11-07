@@ -1,6 +1,11 @@
 from django.shortcuts import render
 import torch  # Or import tensorflow as tf
+import json
 from .models import Llm_model, Politician
+from .llm_utils import get_llm_response
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 
 def main_page_view(request, *args, **kwargs):
     queryset = Politician.objects.all()
@@ -22,17 +27,19 @@ def chat_view(request, politician_id):
     # floor = floors.get(id=room.floor.id)
     return render(request, 'chat_view.html', context)
 
-# def compute_nn_output(request):
-#     output = None
+@require_POST
+@csrf_exempt  # Only use this if you are not using CSRF tokens, otherwise handle CSRF properly
+def llm_response_view(request):
+    try:
+        data = json.loads(request.body)
+        message = data['message']
+        object_chat = data['object_chat']
+        # Now call your Python function that generates the LLM output
+        politician = Politician.objects.get(pk=object_chat)
+        llm_output = get_llm_response(message, politician.llm_polit.path)
+        return JsonResponse({'llm_output': llm_output})
+    except Exception as e:
+        # Log the error here if you need to
+        return JsonResponse({'error': str(e)}, status=500)
 
-#     if request.method == "POST":
-#         user_input = request.POST['input']
-#         # Retrieve the latest NN parameters from the database
-#         nn_params = NeuralNetwork.objects.latest('id').parameters
-        
-#         # Convert the parameters to your framework's format and compute the output
-#         # Here, I'm simplifying it greatly.
-#         model = load_model_from_params(nn_params)
-#         output = model.forward(user_input)
 
-#     return render(request, 'index.html', {'output': output})
