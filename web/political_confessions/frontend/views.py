@@ -1,11 +1,11 @@
 from django.shortcuts import render
-import torch  # Or import tensorflow as tf
 import json
 from .models import Llm_model, Politician
 from .llm_utils import get_llm_response
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+import openai
 
 def main_page_view(request, *args, **kwargs):
     queryset = Politician.objects.all()
