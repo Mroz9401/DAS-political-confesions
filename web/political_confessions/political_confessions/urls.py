@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from frontend.views import main_page_view, chat_view, llm_response_view
+from frontend.views import homepage_view, chat_view, llm_response_view, user_login_view
 
 app_name = 'frontend'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_page_view, name='main_page_view'),
+    path('', user_login_view, name='login'),
+    path('homepage/', homepage_view, name='homepage'),
     path('chat_view/<int:politician_id>/', chat_view, name='chat_view'),
     path('get_llm_response/', llm_response_view, name='get_llm_response'),
 ]
