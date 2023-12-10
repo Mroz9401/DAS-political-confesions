@@ -1,10 +1,13 @@
 from django.db import models
 
 class Llm_model(models.Model):
-    name = models.TextField()  # You can use a more sophisticated method to store parameters.
-    parameters = models.TextField()  # You can use a more sophisticated method to store parameters.
-    path = models.CharField(max_length=1024, blank=True)
-    description = models.TextField()
+    name = models.TextField()
+    model_name = models.CharField(max_length=1024, blank=True)
+    key_path = models.CharField(max_length=1024, blank=True)
+    model_context = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 class Politician(models.Model):
     name = models.TextField()  # You can use a more sophisticated method to store parameters.
@@ -15,3 +18,6 @@ class Politician(models.Model):
         verbose_name=('Llm_model'),
         related_name='LLM'
     )
+
+    def __str__(self):
+        return self.name
