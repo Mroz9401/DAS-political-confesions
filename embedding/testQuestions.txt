@@ -1,0 +1,79 @@
+topic_ukraine
+Kdy začala konflikt na Ukrajině a jaký byl jeho původ?,
+Jaký byl vliv anexe Krymu na eskalaci konfliktu?,
+Které země podporují Ukrajinu a které podporují separatisty?,
+Jaká je aktuální humanitární situace v postižených oblastech?,
+Jaké jsou diplomatické snahy o řešení konfliktu a mírový proces?,
+Jaký je vliv války na civilní obyvatelstvo v dané oblasti?,
+Které mezinárodní organizace se aktivně angažují ve snaze ukončit konflikt?,
+Jaké jsou následky války na ekonomiku Ukrajiny a okolních zemí?,
+Existuje nějaký plán obnovy a rekonstrukce po skončení konfliktu?,
+Jaký je postoj veřejnosti v různých částech světa k ukrajinskému konfliktu?,
+
+topic_palestine
+Jak vznikl současný konflikt mezi Izraelem a Palestinou?,
+Které faktory přispěly k nedávným násilnostem a eskalaci napětí?,
+Jaké jsou hlavní body sporu mezi Izraelem a Palestinci?,
+Jaké jsou důsledky konfliktu na civilní obyvatelstvo na obou stranách?,
+Jaká je role mezinárodní komunity při řešení izraelsko-palestinského konfliktu?,Existuje nějaký mírový plán nebo jednání mezi stranami konfliktu?,
+Jaký je postoj arabských států k izraelsko-palestinskému konfliktu?,
+Které mezinárodní organizace monitorují situaci a poskytují humanitární pomoc?,
+Jak se promítá konflikt do regionální stability na Blízkém východě?,
+Jaký má konflikt vliv na vnímání Izraele a Palestiny ve světě?
+
+topic_president
+Kdo jsou hlavní kandidáti v nadcházejících českých prezidentských volbách?,
+Jaké jsou hlavní politické témata diskutovaná během volební kampaně?,
+Jaké jsou klíčové výzvy, kterým bude český prezident čelit v nadcházejícím období?,
+Jaký je postoj veřejnosti k jednotlivým kandidátům a jejich programům?,
+Jaký je vliv mediálního pokrytí na průběh volební kampaně?,
+Jakým způsobem probíhá volební proces a jaký je očekávaný volební účast?,
+Které politické strany nebo hnutí podporují jednotliví kandidáti?,
+Jaká je role prezidenta v českém politickém systému a jaký má pravomoci?,
+Jaké jsou předpokládané důsledky výsledků prezidentských voleb pro politickou scénu v České republice?,
+ je vliv prezidentských voleb na vnímání České republiky v mezinárodním kontextu?
+
+topic_slovakia
+Kdo jsou hlavní politické strany a kandidáti ve slovenských parlamentních volbách?,
+Jaké jsou klíčové politické otázky, které dominují volební kampani?,
+Jaký je vztah mezi Slovenskem a Evropskou unií v kontextu voleb?,
+Jaký je postoj veřejnosti k jednotlivým politickým stranám a lídrům?,
+Jaký je politický systém na Slovensku a jak funguje parlamentní volba?,
+Které otázky týkající se ekonomiky a sociální politiky jsou ve volbách klíčové?,
+Jaká je role Slovenska v regionálním a mezinárodním kontextu, a jak ovlivňují volby tuto pozici?,
+Jaká je očekávaná volební účast a jaké jsou faktory, které ji mohou ovlivnit?,
+Jaký je postoj kandidátů k otázkám životního prostředí a udržitelnosti?,
+Jak by výsledek voleb mohl ovlivnit vnitřní politické a hospodářské události ve Slovenské republice?
+
+topic_debt_social
+Jaký je současný stav české ekonomiky a jak se liší od období předchozí vlády Andreje Babiše?
+Jaké konkrétní kroky podniká premiér Petr Fiala k řešení rostoucího státního deficitu?
+Jaký vliv má rostoucí státní dluh na ekonomiku České republiky a na občany?
+Jakým způsobem se vláda snaží podporovat ekonomický růst a zlepšit životní podmínky občanů?
+Jaký je postoj opozice k ekonomickým opatřením a návrhům vlády?
+Existují konkrétní opatření na podporu malých a středních podniků v České republice?
+Jaké jsou plány vlády ohledně investic a rozvoje infrastruktury v zemi?
+Které konkrétní opatření vláda podniká k řešení rostoucí chudoby a bídy v České republice?
+Jaký je úspěch programu Milostivé léto ve snižování exekucí a finanční tíže občanů?
+Jaký je postoj vlády k sociální pomoci a podpoře pro nejvíce potřebné?
+Existuje nějaký plán na dlouhodobé řešení sociálních nerovností v zemi?
+Jaké jsou hlavní námitky opozice vůči sociálním opatřením vlády?
+Která konkrétní opatření by mohla pomoci v boji proti chudobě a nerovnostem?
+Jaký je postoj veřejnosti k sociálním opatřením a programům vlády?
+
+topic_personal
+Jaký je politický a profesní profil Petra Fialy?
+Které politické strany a hnutí jsou součástí koalice SPOLU, kterou Petr Fiala vede?
+Které funkce a ministry zastával Petr Fiala v průběhu své politické kariéry?
+Jaké jsou klíčové politické priority a cíle Petra Fialy jako předsedy vlády České republiky?
+Které významné události veřejného života ovlivnily Petr Fialu a jeho politickou kariéru?
+Jaká je historie jeho rodiny a jaké má vazby na politické dění v minulosti?
+Jaký je postoj Petra Fialy k evropské integraci a členství České republiky v Evropské unii?
+Jaká je jeho role ve straně ODS a jaké jsou jeho vize pro budoucnost strany?
+Jaké rodinné prostředí ovlivnilo politickou kariéru a hodnoty Petra Fialy?
+Co je historie rodinného dědictví Petra Fialy, zejména s dědečkem Františkem Fialou?
+Vztahy s dědečkem a babičkou formovaly život Petra Fialy?
+Jak se Petra Fiala staví k otázkám spojeným s dědictvím během druhé světové války?
+Které hodnoty z rodinného prostředí ovlivnily politické postoje Petra Fialy?
+Klíčové momenty v osobním životě Petra Fialy před politikou a jeho vztah s manželkou Janou Fialovou.
+Zájmy a aktivity Petra Fialy mimo politiku a jejich vliv na jeho veřejnou práci.
