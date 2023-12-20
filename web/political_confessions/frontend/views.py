@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 import json
-from .models import Llm_model, Politician
+from .models import Embeddings, Politician
 from .llm_utils import get_llm_response
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
@@ -55,7 +55,7 @@ def llm_response_view(request):
         object_chat = data['object_chat']
         # Now call your Python function that generates the LLM output
         politician = Politician.objects.get(pk=object_chat)
-        llm_output = get_llm_response(message, politician.llm_polit.key_path, politician.llm_polit.model_name, politician.llm_polit.model_context)
+        llm_output = get_llm_response(message, politician.llm_polit.key_path, politician.llm_polit.embedding_path, politician.llm_polit.model_name, politician.llm_polit.template_prompt)
         return JsonResponse({'llm_output': llm_output})
     except Exception as e:
         # Log the error here if you need to
