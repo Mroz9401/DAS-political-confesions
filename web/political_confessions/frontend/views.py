@@ -46,8 +46,8 @@ def chat_view(request, politician_id):
     return render(request, 'chat_view.html', context)
 
 @login_required
-@require_POST
-@csrf_exempt  # Only use this if you are not using CSRF tokens, otherwise handle CSRF properly
+# @require_POST
+# @csrf_exempt  # Only use this if you are not using CSRF tokens, otherwise handle CSRF properly
 def llm_response_view(request):
     try:
         data = json.loads(request.body)

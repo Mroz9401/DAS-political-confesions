@@ -25,7 +25,7 @@ def get_llm_response(input_message, key_path, embedding_path, model_name, templa
     model = AutoModel.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
     feature_extraction_pipeline = pipeline('feature-extraction', model=model, tokenizer=tokenizer)
 
-    llm = ChatOpenAI(temperature=0.77, model_name=model_name, openai_api_key = OPENAI_API_KEY)
+    llm = ChatOpenAI(temperature=0.77, model_name="ft:gpt-3.5-turbo-1106:personal::8V1zpYfy", openai_api_key = OPENAI_API_KEY)
     memory_llm = ChatOpenAI(temperature=0.9, model_name='gpt-3.5-turbo-1106', openai_api_key = OPENAI_API_KEY)
     #template of a prompt
     # template = template_prompt + ": " + input_message + "Shrnutí konverzace: " + "Petr Fiala:"
